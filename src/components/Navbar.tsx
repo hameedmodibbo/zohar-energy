@@ -44,7 +44,7 @@ const Navbar = () => {
               </Link>
             ))}
             <a
-              href="https://wa.me/2348000000000"
+              href="https://wa.me/2348134978154?text=Hello%20Zohar%20Energy%2C%20I%20would%20like%20to%20request%20a%20quote."
               target="_blank"
               rel="noopener noreferrer"
               className="ml-3 px-5 py-2.5 rounded-lg bg-gradient-gold text-primary font-semibold text-sm transition-all duration-200 hover:shadow-gold hover:scale-105"
