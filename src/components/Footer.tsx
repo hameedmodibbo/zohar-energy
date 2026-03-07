@@ -59,8 +59,8 @@ const Footer = () => {
           <div>
             <h3 className="font-heading font-semibold text-base mb-4">Contact Us</h3>
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <a href="tel:+2348000000000" className="flex items-center gap-2 hover:text-solar-gold transition-colors">
-                <Phone className="w-4 h-4" /> +234 800 000 0000
+              <a href="tel:+2348134978154" className="flex items-center gap-2 hover:text-solar-gold transition-colors">
+                <Phone className="w-4 h-4" /> +234 813 4978 154
               </a>
               <a href="mailto:info@zoharenergy.com" className="flex items-center gap-2 hover:text-solar-gold transition-colors">
                 <Mail className="w-4 h-4" /> info@zoharenergy.com
@@ -70,9 +70,10 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex items-center gap-3 mt-4">
-              <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-solar-gold hover:text-primary transition-all" aria-label="WhatsApp">
+              <a href="https://wa.me/2348134978154" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-solar-gold hover:text-primary transition-all" aria-label="WhatsApp">
                 <FaWhatsapp className="w-4 h-4" />
               </a>
+  
               <a href="https://instagram.com/zoharenergy" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-solar-gold hover:text-primary transition-all" aria-label="Instagram">
                 <FaInstagram className="w-4 h-4" />
               </a>

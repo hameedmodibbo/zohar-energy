@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Logo from "../assets/logo.png";
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
@@ -20,12 +20,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-gradient-gold flex items-center justify-center">
-              <Sun className="w-5 h-5 text-primary" />
-            </div>
-            <span className="font-heading font-bold text-lg lg:text-xl text-primary-foreground">
-              Zohar <span className="text-solar-gold">Energy</span>
-            </span>
+            
+            <img src={Logo} alt="Zohar Energy Logo" className="h-10 w-auto" />
+          
           </Link>
 
           {/* Desktop Nav */}
@@ -49,6 +46,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="ml-3 px-5 py-2.5 rounded-lg bg-gradient-gold text-primary font-semibold text-sm transition-all duration-200 hover:shadow-gold hover:scale-105"
             >
+
               Get a Quote
             </a>
           </div>
@@ -89,7 +87,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <a
-                href="https://wa.me/2348000000000"
+                href="https://wa.me/2348134978154"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 px-5 py-3 rounded-lg bg-gradient-gold text-primary font-semibold text-sm text-center"
