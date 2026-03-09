@@ -116,12 +116,34 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
+                className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="h-48 bg-primary/10 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-solar-navy to-solar-navy-light opacity-90" />
-                  <span className="relative text-4xl font-heading font-bold text-solar-gold">{project.kw}</span>
-                </div>
+                {project.image ? (
+                  <div className="relative h-48 overflow-hidden bg-gray-200">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      onError={(e) => {
+                        const img = e.target as HTMLImageElement;
+                        img.style.display = "none";
+                        const fallback = img.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = "flex";
+                      }}
+                    />
+                    <div
+                      style={{ display: "none" }}
+                      className="absolute inset-0 bg-gradient-to-br from-solar-navy to-solar-navy-light flex items-center justify-center"
+                    >
+                      <span className="text-4xl font-heading font-bold text-solar-gold">{project.kw}</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="h-48 bg-primary/10 flex items-center justify-center relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-solar-navy to-solar-navy-light opacity-90" />
+                    <span className="relative text-4xl font-heading font-bold text-solar-gold">{project.kw}</span>
+                  </div>
+                )}
                 <div className="p-6">
                   <span className="text-xs font-semibold text-solar-gold uppercase tracking-wider">{project.category}</span>
                   <h3 className="font-heading font-semibold text-base mt-1 mb-2">{project.title}</h3>

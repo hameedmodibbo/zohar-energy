@@ -45,6 +45,7 @@ export const projects = [
     category: "Residential",
     description: "Complete 5kW solar panel installation for a family home in Gwarinpa, Abuja. Includes inverter and battery backup system.",
     kw: "5kW",
+    image: "/panel.jpeg",
   },
   {
     id: 2,
@@ -52,6 +53,7 @@ export const projects = [
     category: "Commercial",
     description: "10kW commercial solar installation for a corporate office in Wuse II, Abuja. Reduced energy costs by 70%.",
     kw: "10kW",
+    image: "/panel2.jpeg",
   },
   {
     id: 3,
@@ -59,6 +61,7 @@ export const projects = [
     category: "Residential",
     description: "Premium 8kW solar system with full battery storage for a luxury villa in Maitama, Abuja.",
     kw: "8kW",
+    image: "/battery.jpeg",
   },
   {
     id: 4,
@@ -125,5 +128,92 @@ export const testimonials = [
     service: "Solar System Maintenance",
     category: "Residential",
     comment: "Zohar Energy's maintenance service is top-notch. They come regularly, clean the panels, and check everything. Our system performs like new every day.",
+  },
+];
+
+export const gallery = [
+  {
+    id: 1,
+    image: "/panel.jpeg",
+    title: "Solar Panel Installation",
+    category: "Residential",
+    description: "Professional solar panel installation with premium equipment.",
+  },
+  {
+    id: 2,
+    image: "/panel1.jpeg",
+    title: "Rooftop Solar Array",
+    category: "Residential",
+    description: "Complete rooftop solar panel setup for maximum efficiency.",
+  },
+  {
+    id: 3,
+    image: "/panel2.jpeg",
+    title: "Commercial Installation",
+    category: "Commercial",
+    description: "Large-scale solar installation for commercial properties.",
+  },
+  {
+    id: 4,
+    image: "/panel3.jpeg",
+    title: "Advanced Solar System",
+    category: "Commercial",
+    description: "State-of-the-art solar power system installation.",
+  },
+  {
+    id: 5,
+    image: "/panel4.jpeg",
+    title: "High-Capacity Setup",
+    category: "Commercial",
+    description: "Industrial-grade solar energy system.",
+  },
+  {
+    id: 6,
+    image: "/panel5.jpeg",
+    title: "Modern Installation",
+    category: "Residential",
+    description: "Contemporary solar panel installation design.",
+  },
+  {
+    id: 7,
+    image: "/battery.jpeg",
+    title: "Battery Storage System",
+    category: "Residential",
+    description: "Advanced battery backup for 24/7 power availability.",
+  },
+  {
+    id: 8,
+    image: "/battery1.jpeg",
+    title: "Energy Storage Solution",
+    category: "Commercial",
+    description: "Large-capacity battery storage system installation.",
+  },
+  {
+    id: 9,
+    image: "/battery2.jpeg",
+    title: "Battery Integration",
+    category: "Residential",
+    description: "Integrated battery system for reliable power backup.",
+  },
+  {
+    id: 10,
+    image: "/wall.jpeg",
+    title: "Wall-Mounted Components",
+    category: "Residential",
+    description: "Wall-mounted inverter and control systems.",
+  },
+  {
+    id: 11,
+    image: "/wall1.jpeg",
+    title: "System Components",
+    category: "Commercial",
+    description: "Compact electrical system mounting solution.",
+  },
+  {
+    id: 12,
+    image: "/wall3.jpeg",
+    title: "Installation Details",
+    category: "Residential",
+    description: "Precise installation and connection work.",
   },
 ];
