@@ -124,8 +124,8 @@ const Index = () => {
             title="Our Services – High-Quality Solar Solutions"
             subtitle="From installation to maintenance, we deliver premium solar energy services across Abuja."
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {services.slice(0, 3).map((service, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {services.slice(0, 4).map((service, i) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -213,8 +213,75 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Preview */}
+      {/* Business Solutions Section */}
       <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <h2 className="font-heading font-bold text-3xl md:text-4xl mb-6">
+                Solar Energy for Businesses, Estates & Institutions
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                We partner with businesses, property developers, and government institutions to deliver reliable solar power systems that reduce energy costs and eliminate dependence on diesel generators.
+              </p>
+              <div className="space-y-4 mb-8">
+                <h3 className="font-heading font-semibold text-lg">Industries served:</h3>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {[
+                    "Real Estate Developers",
+                    "Hotels & Hospitality",
+                    "Schools & Universities",
+                    "Hospitals",
+                    "Manufacturing & Industrial Facilities",
+                    "Government Agencies",
+                  ].map((industry, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-solar-gold" />
+                      <span className="text-foreground">{industry}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <motion.a
+                href="https://wa.me/2348134978154?text=Hello%20Zohar%20Energy%2C%20I%20would%20like%20to%20discuss%20a%20solar%20project%20for%20my%20business."
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-gradient-gold font-semibold text-primary transition-all hover:shadow-gold"
+              >
+                <FaWhatsapp className="w-5 h-5" /> Discuss Your Project
+              </motion.a>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="grid grid-cols-2 gap-4"
+            >
+              {[
+                { count: "50+", label: "Projects Delivered" },
+                { count: "1MW+", label: "Total Capacity" },
+                { count: "100+", label: "Happy Clients" },
+                { count: "99%", label: "System Uptime" },
+              ].map((item, i) => (
+                <div key={i} className="bg-card rounded-lg p-6 text-center shadow-card">
+                  <p className="font-heading font-bold text-3xl text-solar-gold mb-2">{item.count}</p>
+                  <p className="text-sm text-muted-foreground font-medium">{item.label}</p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Preview */}
+      <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
             title="What Our Clients Say"

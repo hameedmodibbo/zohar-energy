@@ -1,26 +1,33 @@
-import { Sun, Battery, Zap, Wrench, Lightbulb } from "lucide-react";
+import { Sun, Battery, Zap, Wrench, Lightbulb, Droplets } from "lucide-react";
 
 export const services = [
   {
-    id: "solar-panel-installation",
+    id: "residential-solar-systems",
     icon: Sun,
-    title: "Solar Panel Installation",
-    short: "High-quality solar panel installation for homes and businesses in Abuja, designed for maximum energy efficiency.",
-    full: "Our expert team provides professional solar panel installation in Abuja for residential and commercial properties. We use only premium-grade panels and ensure optimal positioning for maximum sunlight capture and energy generation throughout the year.",
+    title: "Residential Solar Systems",
+    short: "Reliable solar power systems designed to provide uninterrupted energy for homes and apartments.",
+    full: "Reliable solar power systems designed to provide uninterrupted energy for homes and apartments. Our residential solutions are tailored to meet your household's energy needs with high-quality panels, inverters, and battery storage systems.",
   },
   {
-    id: "inverter-installation",
+    id: "commercial-industrial-solar",
     icon: Zap,
-    title: "Inverter Installation",
-    short: "Professional inverter installation in Abuja to power your home or office seamlessly with clean energy.",
-    full: "We supply and install industry-leading inverters in Abuja that seamlessly convert solar energy into usable power for your home or business. Our inverters are selected for durability, efficiency, and compatibility with your solar setup.",
+    title: "Commercial & Industrial Solar (C&I)",
+    short: "Large-scale solar and battery storage solutions for businesses, factories, hotels, and institutions.",
+    full: "Large-scale solar and battery storage solutions for businesses, factories, hotels, and institutions. We design and deploy comprehensive solar systems that significantly reduce operational costs and carbon footprint for commercial enterprises.",
   },
   {
-    id: "battery-storage",
-    icon: Battery,
-    title: "Battery Storage Systems",
-    short: "Advanced battery storage solutions in Abuja to store solar energy and ensure 24/7 power availability.",
-    full: "Never worry about power outages again. Our battery storage systems in Abuja store excess solar energy for use during nighttime or cloudy days, providing your property with reliable, uninterrupted power around the clock.",
+    id: "estate-solar-infrastructure",
+    icon: Lightbulb,
+    title: "Estate Solar Infrastructure",
+    short: "Integrated solar solutions for real estate developers including solar street lighting, borehole systems, and hybrid home systems.",
+    full: "Integrated solar solutions for real estate developers including solar street lighting, borehole systems, and hybrid home systems. We provide comprehensive energy infrastructure that enhances property value and reduces development costs.",
+  },
+  {
+    id: "solar-water-pumping",
+    icon: Droplets,
+    title: "Solar Water & Pumping Systems",
+    short: "Solar-powered water heating and borehole pumping systems.",
+    full: "Solar-powered water heating and borehole pumping systems that provide sustainable water solutions for residential and commercial properties. Reduce water heating costs and improve water accessibility with our advanced solar pumping technology.",
   },
   {
     id: "maintenance",
