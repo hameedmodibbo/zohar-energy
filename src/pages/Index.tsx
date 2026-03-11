@@ -31,8 +31,7 @@ const Index = () => {
               transition={{ duration: 0.7 }}
               className="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-5"
             >
-              Reliable Solar Installation You Can Trust in{" "}
-              <span className="text-gradient-gold">Abuja</span>
+              Engineering Reliable Solar Energy Infrastructure
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -40,7 +39,7 @@ const Index = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-white/80 text-lg md:text-xl mb-8 leading-relaxed"
             >
-              Professional solar solutions for homes and businesses. Power your future with clean, dependable energy from Zohar Energy.
+              Zohar Energy designs and deploys high-performance solar and energy storage systems for homes, businesses, estates, and government institutions.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -54,15 +53,66 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-gradient-gold font-semibold text-primary transition-all hover:shadow-gold hover:scale-105"
               >
-                <FaWhatsapp className="w-5 h-5" /> Request a Quote
+                <FaWhatsapp className="w-5 h-5" /> Request a Solar Proposal
               </a>
-              <a
-                href="tel:+2348134978154"
+              <Link
+                to="/projects"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-white/30 text-white font-semibold transition-all hover:bg-white/10"
               >
-                <Phone className="w-5 h-5" /> Call Now
-              </a>
+                <ArrowRight className="w-5 h-5" /> View Our Projects
+              </Link>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Credibility Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
+              Trusted Solar Energy Partner for Homes, Businesses & Institutions
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              "Residential Solar Systems",
+              "Commercial & Industrial Solar",
+              "Estate Solar Infrastructure",
+              "Solar Streetlight Projects",
+            ].map((service, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 text-center hover:-translate-y-1"
+              >
+                <p className="font-heading font-semibold text-lg">{service}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { stat: "50+", label: "Installations" },
+              { stat: "1MW+", label: "Installed Capacity" },
+              { stat: "100+", label: "Satisfied Clients" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-card rounded-xl p-8 shadow-card text-center"
+              >
+                <p className="font-heading font-bold text-4xl text-solar-gold mb-2">{item.stat}</p>
+                <p className="text-muted-foreground font-medium">{item.label}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
