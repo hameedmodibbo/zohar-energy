@@ -379,6 +379,35 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-solar-navy to-solar-navy-light">
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center max-w-2xl mx-auto"
+          >
+            <h2 className="font-heading font-bold text-4xl md:text-5xl text-white mb-6">
+              Ready to Switch to Solar Energy?
+            </h2>
+            <p className="text-white/80 text-lg md:text-xl mb-10 leading-relaxed">
+              Let Zohar Energy design a reliable solar power solution for your home, business, or facility.
+            </p>
+            <motion.a
+              href="https://wa.me/2348134978154?text=Hello%20Zohar%20Energy%2C%20I%20would%20like%20to%20request%20a%20free%20consultation."
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-gold font-semibold text-primary text-lg transition-all hover:shadow-gold"
+            >
+              <FaWhatsapp className="w-6 h-6" /> Request a Free Consultation
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
     </PageLayout>
   );
 };
