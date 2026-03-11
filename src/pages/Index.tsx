@@ -151,6 +151,65 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Our Process Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 lg:px-8">
+          <SectionHeading
+            title="Our Process"
+            subtitle="From assessment to ongoing support, we guide you through every step of your solar journey."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            {[
+              {
+                step: "1",
+                title: "Energy Assessment",
+                description: "Our engineers analyze your energy consumption and site conditions.",
+              },
+              {
+                step: "2",
+                title: "System Design",
+                description: "We design a customized solar and energy storage solution.",
+              },
+              {
+                step: "3",
+                title: "Engineering & Procurement",
+                description: "High-quality solar components are sourced and prepared for installation.",
+              },
+              {
+                step: "4",
+                title: "Installation & Commissioning",
+                description: "Our team installs and commissions the solar system.",
+              },
+              {
+                step: "5",
+                title: "Monitoring & Support",
+                description: "We provide ongoing monitoring and maintenance support.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative"
+              >
+                <div className="bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 h-full">
+                  <div className="w-10 h-10 rounded-full bg-gradient-gold flex items-center justify-center mb-4">
+                    <span className="font-heading font-bold text-primary">{item.step}</span>
+                  </div>
+                  <h3 className="font-heading font-semibold text-lg mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                </div>
+                {i < 4 && (
+                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-solar-gold to-transparent transform -translate-y-1/2" />
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Projects Preview */}
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4 lg:px-8">
