@@ -7,6 +7,7 @@ import SectionHeading from "@/components/SectionHeading";
 import { services, projects, testimonials } from "@/data/siteData";
 import heroImage from "@/assets/hero-solar.jpg";
 
+import PackagesSection from "@/components/PackagesSection";
 const Index = () => {
   return (
     <PageLayout
@@ -39,7 +40,9 @@ const Index = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-white/80 text-lg md:text-xl mb-8 leading-relaxed"
             >
-              Zohar Energy designs and deploys high-performance solar and energy storage systems for homes, businesses, estates, and government institutions.
+              Zohar Energy designs and deploys high-performance solar and energy
+              storage systems for homes, businesses, estates, and government
+              institutions.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -109,8 +112,12 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-card rounded-xl p-8 shadow-card text-center"
               >
-                <p className="font-heading font-bold text-4xl text-solar-gold mb-2">{item.stat}</p>
-                <p className="text-muted-foreground font-medium">{item.label}</p>
+                <p className="font-heading font-bold text-4xl text-solar-gold mb-2">
+                  {item.stat}
+                </p>
+                <p className="text-muted-foreground font-medium">
+                  {item.label}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -137,8 +144,12 @@ const Index = () => {
                 <div className="w-12 h-12 rounded-lg bg-accent/15 flex items-center justify-center mb-5 group-hover:bg-gradient-gold group-hover:text-primary transition-all">
                   <service.icon className="w-6 h-6 text-solar-gold group-hover:text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">{service.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{service.short}</p>
+                <h3 className="font-heading font-semibold text-lg mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  {service.short}
+                </p>
                 <Link
                   to="/services"
                   className="inline-flex items-center gap-1 text-solar-gold font-medium text-sm hover:gap-2 transition-all"
@@ -163,27 +174,32 @@ const Index = () => {
               {
                 step: "1",
                 title: "Energy Assessment",
-                description: "Our engineers analyze your energy consumption and site conditions.",
+                description:
+                  "Our engineers analyze your energy consumption and site conditions.",
               },
               {
                 step: "2",
                 title: "System Design",
-                description: "We design a customized solar and energy storage solution.",
+                description:
+                  "We design a customized solar and energy storage solution.",
               },
               {
                 step: "3",
                 title: "Engineering & Procurement",
-                description: "High-quality solar components are sourced and prepared for installation.",
+                description:
+                  "High-quality solar components are sourced and prepared for installation.",
               },
               {
                 step: "4",
                 title: "Installation & Commissioning",
-                description: "Our team installs and commissions the solar system.",
+                description:
+                  "Our team installs and commissions the solar system.",
               },
               {
                 step: "5",
                 title: "Monitoring & Support",
-                description: "We provide ongoing monitoring and maintenance support.",
+                description:
+                  "We provide ongoing monitoring and maintenance support.",
               },
             ].map((item, i) => (
               <motion.div
@@ -196,10 +212,16 @@ const Index = () => {
               >
                 <div className="bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 h-full">
                   <div className="w-10 h-10 rounded-full bg-gradient-gold flex items-center justify-center mb-4">
-                    <span className="font-heading font-bold text-primary">{item.step}</span>
+                    <span className="font-heading font-bold text-primary">
+                      {item.step}
+                    </span>
                   </div>
-                  <h3 className="font-heading font-semibold text-lg mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="font-heading font-semibold text-lg mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
                 {i < 4 && (
                   <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-solar-gold to-transparent transform -translate-y-1/2" />
@@ -209,7 +231,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-
+      <PackagesSection />
       {/* Projects Preview */}
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4 lg:px-8">
@@ -244,19 +266,29 @@ const Index = () => {
                       style={{ display: "none" }}
                       className="absolute inset-0 bg-gradient-to-br from-solar-navy to-solar-navy-light flex items-center justify-center"
                     >
-                      <span className="text-4xl font-heading font-bold text-solar-gold">{project.kw}</span>
+                      <span className="text-4xl font-heading font-bold text-solar-gold">
+                        {project.kw}
+                      </span>
                     </div>
                   </div>
                 ) : (
                   <div className="h-48 bg-primary/10 flex items-center justify-center relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-solar-navy to-solar-navy-light opacity-90" />
-                    <span className="relative text-4xl font-heading font-bold text-solar-gold">{project.kw}</span>
+                    <span className="relative text-4xl font-heading font-bold text-solar-gold">
+                      {project.kw}
+                    </span>
                   </div>
                 )}
                 <div className="p-6">
-                  <span className="text-xs font-semibold text-solar-gold uppercase tracking-wider">{project.category}</span>
-                  <h3 className="font-heading font-semibold text-base mt-1 mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+                  <span className="text-xs font-semibold text-solar-gold uppercase tracking-wider">
+                    {project.category}
+                  </span>
+                  <h3 className="font-heading font-semibold text-base mt-1 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {project.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -286,10 +318,14 @@ const Index = () => {
                 Solar Energy for Businesses, Estates & Institutions
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                We partner with businesses, property developers, and government institutions to deliver reliable solar power systems that reduce energy costs and eliminate dependence on diesel generators.
+                We partner with businesses, property developers, and government
+                institutions to deliver reliable solar power systems that reduce
+                energy costs and eliminate dependence on diesel generators.
               </p>
               <div className="space-y-4 mb-8">
-                <h3 className="font-heading font-semibold text-lg">Industries served:</h3>
+                <h3 className="font-heading font-semibold text-lg">
+                  Industries served:
+                </h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {[
                     "Real Estate Developers",
@@ -329,9 +365,16 @@ const Index = () => {
                 { count: "100+", label: "Happy Clients" },
                 { count: "99%", label: "System Uptime" },
               ].map((item, i) => (
-                <div key={i} className="bg-card rounded-lg p-6 text-center shadow-card">
-                  <p className="font-heading font-bold text-3xl text-solar-gold mb-2">{item.count}</p>
-                  <p className="text-sm text-muted-foreground font-medium">{item.label}</p>
+                <div
+                  key={i}
+                  className="bg-card rounded-lg p-6 text-center shadow-card"
+                >
+                  <p className="font-heading font-bold text-3xl text-solar-gold mb-2">
+                    {item.count}
+                  </p>
+                  <p className="text-sm text-muted-foreground font-medium">
+                    {item.label}
+                  </p>
                 </div>
               ))}
             </motion.div>
@@ -358,10 +401,14 @@ const Index = () => {
               >
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, si) => (
-                    <span key={si} className="text-solar-gold text-lg">★</span>
+                    <span key={si} className="text-solar-gold text-lg">
+                      ★
+                    </span>
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-5 italic">"{t.comment}"</p>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-5 italic">
+                  "{t.comment}"
+                </p>
                 <div>
                   <p className="font-heading font-semibold text-sm">{t.name}</p>
                   <p className="text-xs text-muted-foreground">{t.service}</p>
@@ -394,7 +441,8 @@ const Index = () => {
               Ready to Switch to Solar Energy?
             </h2>
             <p className="text-white/80 text-lg md:text-xl mb-10 leading-relaxed">
-              Let Zohar Energy design a reliable solar power solution for your home, business, or facility.
+              Let Zohar Energy design a reliable solar power solution for your
+              home, business, or facility.
             </p>
             <motion.a
               href="https://wa.me/2348134978154?text=Hello%20Zohar%20Energy%2C%20I%20would%20like%20to%20request%20a%20free%20consultation."

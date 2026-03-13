@@ -74,10 +74,10 @@ const Footer = () => {
                 <FaWhatsapp className="w-4 h-4" />
               </a>
   
-              <a href="https://instagram.com/zoharenergy" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-solar-gold hover:text-primary transition-all" aria-label="Instagram">
+              <a href="https://instagram.com/zohar-energy" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-solar-gold hover:text-primary transition-all" aria-label="Instagram">
                 <FaInstagram className="w-4 h-4" />
               </a>
-              <a href="https://facebook.com/zoharenergy" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-solar-gold hover:text-primary transition-all" aria-label="Facebook">
+              <a href="https://facebook.com/zoharenergy01" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-solar-gold hover:text-primary transition-all" aria-label="Facebook">
                 <FaFacebookF className="w-4 h-4" />
               </a>
             </div>
