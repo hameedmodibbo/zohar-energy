@@ -36,6 +36,31 @@ const statsItems = [
   { value: "120+", label: "Happy Clients" },
   { value: "24/7", label: "Support Availability" },
 ];
+
+const productItems = [
+  {
+    title: "Monocrystalline Premium Series",
+    subtitle: "Panel",
+    specs: ["High Efficiency", "25-Year Warranty", "Low Degradation"],
+    price: "N1,450,000",
+    image: "/panel3.jpeg",
+  },
+  {
+    title: "Hybrid Inverter Systems",
+    subtitle: "5kVA - 15kVA",
+    specs: ["Smart Hybrid Mode", "Surge Protection", "Remote Monitoring"],
+    price: "N650,000",
+    image: "/panel1.jpeg",
+  },
+  {
+    title: "Lithium Storage Solutions",
+    subtitle: "Wall-Mounted",
+    specs: ["Compact Design", "Long Cycle Life", "Fast Charging"],
+    price: "N950,000",
+    image: "/battery.jpeg",
+  },
+];
+
 const Index = () => {
   return (
     <PageLayout
@@ -214,74 +239,62 @@ const Index = () => {
           </div>
         </div>
       </section>
-      {/* Projects Preview */}
-      <section className="py-20 bg-secondary">
+      {/* Premium Solar Solutions */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            title="Recent Projects in Abuja"
-            subtitle="Explore our latest solar installations for homes and businesses across Abuja."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            {projects.slice(0, 3).map((project, i) => (
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="font-serif text-4xl text-[#143621] font-semibold">
+              Premium Solar Solutions
+            </h2>
+            <p className="mt-4 font-sans text-sm text-gray-600">
+              Engineered for efficiency. Built for longevity.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {productItems.map((product, i) => (
               <motion.div
-                key={project.id}
+                key={product.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+                className="group bg-white rounded-sm shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
-                {project.image ? (
-                  <div className="relative h-48 overflow-hidden bg-gray-200">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      onError={(e) => {
-                        const img = e.target as HTMLImageElement;
-                        img.style.display = "none";
-                        const fallback = img.nextElementSibling as HTMLElement;
-                        if (fallback) fallback.style.display = "flex";
-                      }}
-                    />
-                    <div
-                      style={{ display: "none" }}
-                      className="absolute inset-0 bg-gradient-to-br from-solar-navy to-solar-navy-light flex items-center justify-center"
-                    >
-                      <span className="text-4xl font-heading font-bold text-solar-gold">
-                        {project.kw}
-                      </span>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="h-48 bg-primary/10 flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-solar-navy to-solar-navy-light opacity-90" />
-                    <span className="relative text-4xl font-heading font-bold text-solar-gold">
-                      {project.kw}
-                    </span>
-                  </div>
-                )}
+                <div className="overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
                 <div className="p-6">
-                  <span className="text-xs font-semibold text-solar-gold uppercase tracking-wider">
-                    {project.category}
-                  </span>
-                  <h3 className="font-heading font-semibold text-base mt-1 mb-2">
-                    {project.title}
+                  <h3 className="font-serif text-xl text-[#143621] mb-3">
+                    {product.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {project.description}
+                  <p className="font-sans text-xs text-gray-500 uppercase tracking-wider mb-4">
+                    {product.subtitle}
                   </p>
+                  <ul className="mb-5 space-y-2 text-xs font-sans text-gray-500">
+                    {product.specs.map((spec) => (
+                      <li key={spec} className="flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#143621] mt-1" />
+                        {spec}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="font-sans text-2xl font-bold text-[#D4AF37] mb-6">
+                    {product.price}
+                  </p>
+                  <Link
+                    to="/projects"
+                    className="inline-flex w-full items-center justify-center rounded-sm border border-[#143621] px-4 py-3 text-sm font-semibold text-[#143621] transition-all duration-200 hover:bg-[#143621] hover:text-white"
+                  >
+                    View Details
+                  </Link>
                 </div>
               </motion.div>
             ))}
-          </div>
-          <div className="text-center">
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:scale-105 transition-transform"
-            >
-              View All Projects <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </section>
