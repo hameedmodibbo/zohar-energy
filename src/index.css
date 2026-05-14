@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 170 80% 18%;
+    --background: 18 11% 94%;
+    --foreground: 143 48% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 170 80% 18%;
+    --card-foreground: 143 48% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 170 80% 18%;
+    --popover-foreground: 143 48% 15%;
 
-    --primary: 170 80% 25%;
+    --primary: 46 65% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 170 50% 90%;
-    --secondary-foreground: 170 80% 18%;
+    --secondary: 18 11% 94%;
+    --secondary-foreground: 143 48% 15%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 170 30% 40%;
+    --muted: 18 11% 94%;
+    --muted-foreground: 0 0% 29%;
 
-    --accent: 120 73% 75%;
-    --accent-foreground: 170 80% 18%;
+    --accent: 143 48% 15%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -59,25 +59,25 @@
   }
 
   .dark {
-    --background: 170 80% 10%;
-    --foreground: 0 0% 98%;
-    --card: 170 80% 16%;
-    --card-foreground: 0 0% 98%;
-    --popover: 170 80% 16%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 120 73% 75%;
-    --primary-foreground: 170 80% 18%;
-    --secondary: 170 80% 18%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 170 80% 20%;
-    --muted-foreground: 170 20% 70%;
-    --accent: 120 73% 75%;
-    --accent-foreground: 170 80% 18%;
+    --background: 143 48% 10%;
+    --foreground: 0 0% 100%;
+    --card: 143 48% 15%;
+    --card-foreground: 0 0% 100%;
+    --popover: 143 48% 15%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 46 65% 52%;
+    --primary-foreground: 143 48% 15%;
+    --secondary: 143 48% 18%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 143 48% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 46 65% 52%;
+    --accent-foreground: 143 48% 15%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 170 80% 20%;
-    --input: 170 80% 20%;
-    --ring: 120 73% 75%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 143 48% 20%;
+    --input: 143 48% 20%;
+    --ring: 46 65% 52%;
   }
 }
 
@@ -88,11 +88,11 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-family: 'Cormorant Garamond', serif;
   }
 }
 

@@ -1,13 +1,41 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, Sun, Lightbulb, Home, Droplets } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import PageLayout from "@/components/PageLayout";
 import SectionHeading from "@/components/SectionHeading";
-import { services, projects, testimonials } from "@/data/siteData";
+import { projects, testimonials } from "@/data/siteData";
 import heroImage from "@/assets/hero-solar.jpg";
 
-import PackagesSection from "@/components/PackagesSection";
+const serviceItems = [
+  {
+    title: "Solar System Design",
+    description: "Custom photovoltaic solutions for homes and businesses.",
+    icon: Sun,
+  },
+  {
+    title: "Streetlight Projects",
+    description: "Reliable solar-powered street lighting for safer streets.",
+    icon: Lightbulb,
+  },
+  {
+    title: "Home & Community Solar",
+    description: "Affordable solar energy systems for households and communities.",
+    icon: Home,
+  },
+  {
+    title: "Solar Water Heating",
+    description: "Efficient solar water heating systems for everyday use.",
+    icon: Droplets,
+  },
+];
+
+const statsItems = [
+  { value: "60+", label: "Projects Delivered" },
+  { value: "1.2MW+", label: "System Capacity" },
+  { value: "120+", label: "Happy Clients" },
+  { value: "24/7", label: "Support Availability" },
+];
 const Index = () => {
   return (
     <PageLayout
@@ -15,30 +43,33 @@ const Index = () => {
       description="Zohar Energy provides professional solar installation services in Abuja. Showcase your projects, trust signals, and connect with clients via WhatsApp, Instagram, and Facebook."
     >
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center">
+      <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0">
           <img
             src={heroImage}
             alt="Solar panel installation on rooftop in Abuja"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-hero-overlay" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl mx-auto text-center md:mx-0 md:text-left">
+            <div className="mb-8 flex justify-center md:justify-start">
+              <span className="inline-block h-1 w-20 rounded-full bg-[#D4AF37]" />
+            </div>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-5"
+              className="font-serif font-bold text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-5"
             >
-              Engineering Reliable Solar Energy Infrastructure
+              Powering Africa with Clean, Sustainable Energy
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-white/80 text-lg md:text-xl mb-8 leading-relaxed"
+              className="font-sans text-white/90 text-lg md:text-xl max-w-xl mx-auto md:mx-0 mb-10 leading-relaxed"
             >
               Zohar Energy designs and deploys high-performance solar and energy
               storage systems for homes, businesses, estates, and government
@@ -48,190 +79,141 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start"
             >
               <a
-                href="https://wa.me/2348134978154?text=Hello%20Zohar%20Energy%2C%20I%20would%20like%20to%20request%20a%20quote."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-gradient-gold font-semibold text-primary transition-all hover:shadow-gold hover:scale-105"
+                href="/services"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[#D4AF37] text-[#143621] font-semibold text-base transition-all duration-200 hover:bg-[#c39b2f]"
               >
-                <FaWhatsapp className="w-5 h-5" /> Request a Solar Proposal
+                Explore Solutions
               </a>
-              <Link
-                to="/projects"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-white/30 text-white font-semibold transition-all hover:bg-white/10"
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-white text-white bg-transparent font-semibold text-base transition-all duration-200 hover:bg-white/10"
               >
-                <ArrowRight className="w-5 h-5" /> View Our Projects
-              </Link>
+                Contact Us
+              </a>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Credibility Section */}
-      <section className="py-20 bg-secondary">
+      {/* Services Preview */}
+      <section className="bg-[#F5F2EB] py-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
-              Trusted Solar Energy Partner for Homes, Businesses & Institutions
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <h2 className="font-serif text-4xl text-[#143621] font-semibold">
+              Our Services
             </h2>
+            <p className="mt-4 font-sans text-sm text-gray-600">
+              Comprehensive renewable energy solutions tailored for Nigeria.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {[
-              "Residential Solar Systems",
-              "Commercial & Industrial Solar",
-              "Estate Solar Infrastructure",
-              "Solar Streetlight Projects",
-            ].map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 text-center hover:-translate-y-1"
-              >
-                <p className="font-heading font-semibold text-lg">{service}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { stat: "50+", label: "Installations" },
-              { stat: "1MW+", label: "Installed Capacity" },
-              { stat: "100+", label: "Satisfied Clients" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card rounded-xl p-8 shadow-card text-center"
-              >
-                <p className="font-heading font-bold text-4xl text-solar-gold mb-2">
-                  {item.stat}
-                </p>
-                <p className="text-muted-foreground font-medium">
-                  {item.label}
-                </p>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
+            {serviceItems.map((service, i) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="bg-white p-10 rounded-sm shadow-sm transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#143621]/10 text-[#143621]">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-serif text-xl text-[#143621] mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="font-sans text-sm text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Services Preview */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            title="Our Services – High-Quality Solar Solutions"
-            subtitle="From installation to maintenance, we deliver premium solar energy services across Abuja."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {services.slice(0, 4).map((service, i) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group bg-card rounded-xl p-7 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="w-12 h-12 rounded-lg bg-accent/15 flex items-center justify-center mb-5 group-hover:bg-gradient-gold group-hover:text-primary transition-all">
-                  <service.icon className="w-6 h-6 text-solar-gold group-hover:text-primary" />
-                </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {service.short}
+      <section className="bg-[#143621]">
+        <div className="container mx-auto px-4 lg:px-8 py-16">
+          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+            {statsItems.map((item) => (
+              <div key={item.label} className="rounded-sm px-6 py-10 text-center bg-[#143621]/10">
+                <p className="font-sans text-5xl font-bold text-[#D4AF37]">
+                  {item.value}
                 </p>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-1 text-solar-gold font-medium text-sm hover:gap-2 transition-all"
-                >
-                  Read More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </motion.div>
+                <p className="mt-3 text-sm font-sans uppercase text-white tracking-widest">
+                  {item.label}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Our Process Section */}
-      <section className="py-20 bg-background">
+      <section className="bg-[#F5F2EB] py-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            title="Our Process"
-            subtitle="From assessment to ongoing support, we guide you through every step of your solar journey."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="font-serif text-4xl text-[#143621] font-semibold">
+              Our Process
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
             {[
               {
-                step: "1",
-                title: "Energy Assessment",
-                description:
-                  "Our engineers analyze your energy consumption and site conditions.",
+                step: "01",
+                title: "Consultation",
+                description: "Understanding your energy needs.",
               },
               {
-                step: "2",
-                title: "System Design",
-                description:
-                  "We design a customized solar and energy storage solution.",
+                step: "02",
+                title: "Site Assessment",
+                description: "Technical evaluation of your location.",
               },
               {
-                step: "3",
-                title: "Engineering & Procurement",
-                description:
-                  "High-quality solar components are sourced and prepared for installation.",
+                step: "03",
+                title: "Design & Install",
+                description: "Custom engineering and professional setup.",
               },
               {
-                step: "4",
-                title: "Installation & Commissioning",
-                description:
-                  "Our team installs and commissions the solar system.",
-              },
-              {
-                step: "5",
-                title: "Monitoring & Support",
-                description:
-                  "We provide ongoing monitoring and maintenance support.",
+                step: "04",
+                title: "Support",
+                description: "Long-term maintenance and monitoring.",
               },
             ].map((item, i) => (
               <motion.div
-                key={i}
+                key={item.step}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative"
+                className="relative bg-white p-8 rounded-sm shadow-sm overflow-hidden"
               >
-                <div className="bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 h-full">
-                  <div className="w-10 h-10 rounded-full bg-gradient-gold flex items-center justify-center mb-4">
-                    <span className="font-heading font-bold text-primary">
-                      {item.step}
-                    </span>
+                <span className="pointer-events-none absolute top-6 right-6 text-[5rem] font-serif font-bold text-[#D4AF37]/30 leading-none">
+                  {item.step}
+                </span>
+                <div className="relative z-10">
+                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#143621]/10 text-[#143621] font-serif text-lg font-bold">
+                    {item.step}
                   </div>
-                  <h3 className="font-heading font-semibold text-lg mb-3">
+                  <h3 className="font-serif text-xl text-[#143621] mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="font-sans text-sm text-gray-600 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
-                {i < 4 && (
-                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-solar-gold to-transparent transform -translate-y-1/2" />
-                )}
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-      <PackagesSection />
       {/* Projects Preview */}
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4 lg:px-8">
@@ -351,32 +333,6 @@ const Index = () => {
               >
                 <FaWhatsapp className="w-5 h-5" /> Discuss Your Project
               </motion.a>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="grid grid-cols-2 gap-4"
-            >
-              {[
-                { count: "50+", label: "Projects Delivered" },
-                { count: "1MW+", label: "Total Capacity" },
-                { count: "100+", label: "Happy Clients" },
-                { count: "99%", label: "System Uptime" },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-card rounded-lg p-6 text-center shadow-card"
-                >
-                  <p className="font-heading font-bold text-3xl text-solar-gold mb-2">
-                    {item.count}
-                  </p>
-                  <p className="text-sm text-muted-foreground font-medium">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
             </motion.div>
           </div>
         </div>

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sun } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "../assets/logo.png";
 const navLinks = [
@@ -12,17 +12,29 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md border-b border-primary-foreground/10">
+    <nav
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md ${
+        scrolled
+          ? "bg-[#143621] border-b border-[#143621]/20 shadow-xl"
+          : "bg-transparent border-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            
             <img src={Logo} alt="Zohar Energy Logo" className="h-10 w-auto" />
-          
           </Link>
 
           {/* Desktop Nav */}
@@ -31,10 +43,10 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                className={`px-4 py-2 rounded-lg text-sm uppercase tracking-wider font-sans text-white transition-colors duration-200 ${
                   location.pathname === link.to
-                    ? "bg-primary-foreground/15 text-solar-gold"
-                    : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                    ? "opacity-100"
+                    : "opacity-90 hover:opacity-100 hover:text-[#D4AF37]"
                 }`}
               >
                 {link.label}
@@ -44,17 +56,16 @@ const Navbar = () => {
               href="https://wa.me/2348134978154?text=Hello%20Zohar%20Energy%2C%20I%20would%20like%20to%20request%20a%20quote."
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-3 px-5 py-2.5 rounded-lg bg-gradient-gold text-primary font-semibold text-sm transition-all duration-200 hover:shadow-gold hover:scale-105"
+              className="ml-3 px-5 py-2.5 rounded-sm bg-[#D4AF37] text-[#143621] font-semibold text-sm transition-all duration-200 hover:bg-[#c39b2f]"
             >
-
-              Get a Quote
+              Early Quote
             </a>
           </div>
 
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-primary-foreground p-2"
+            className="md:hidden text-white hover:text-[#D4AF37] p-2"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -69,7 +80,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-primary border-t border-primary-foreground/10 overflow-hidden"
+            className="md:hidden bg-[#143621] border-t border-[#143621]/10 overflow-hidden"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -77,10 +88,10 @@ const Navbar = () => {
                   key={link.to}
                   to={link.to}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-lg text-sm uppercase tracking-wider font-sans text-white transition-colors ${
                     location.pathname === link.to
-                      ? "bg-primary-foreground/15 text-solar-gold"
-                      : "text-primary-foreground/80 hover:bg-primary-foreground/10"
+                      ? "bg-white/10 text-white"
+                      : "text-white hover:text-[#D4AF37] hover:bg-white/10"
                   }`}
                 >
                   {link.label}
@@ -90,9 +101,9 @@ const Navbar = () => {
                 href="https://wa.me/2348134978154"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 px-5 py-3 rounded-lg bg-gradient-gold text-primary font-semibold text-sm text-center"
+                className="mt-2 px-5 py-3 rounded-sm bg-[#D4AF37] text-[#143621] font-semibold text-sm text-center"
               >
-                Get a Quote
+                Early Quote
               </a>
             </div>
           </motion.div>
