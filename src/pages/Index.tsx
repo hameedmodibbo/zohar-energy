@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, Sun, Lightbulb, Home, Droplets } from "lucide-react";
+import { ArrowRight, Phone, Sun, Lightbulb, Home, Droplets, Quote } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import PageLayout from "@/components/PageLayout";
 import SectionHeading from "@/components/SectionHeading";
@@ -299,65 +299,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Business Solutions Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <h2 className="font-heading font-bold text-3xl md:text-4xl mb-6">
-                Solar Energy for Businesses, Estates & Institutions
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                We partner with businesses, property developers, and government
-                institutions to deliver reliable solar power systems that reduce
-                energy costs and eliminate dependence on diesel generators.
-              </p>
-              <div className="space-y-4 mb-8">
-                <h3 className="font-heading font-semibold text-lg">
-                  Industries served:
-                </h3>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {[
-                    "Real Estate Developers",
-                    "Hotels & Hospitality",
-                    "Schools & Universities",
-                    "Hospitals",
-                    "Manufacturing & Industrial Facilities",
-                    "Government Agencies",
-                  ].map((industry, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-solar-gold" />
-                      <span className="text-foreground">{industry}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <motion.a
-                href="https://wa.me/2348134978154?text=Hello%20Zohar%20Energy%2C%20I%20would%20like%20to%20discuss%20a%20solar%20project%20for%20my%20business."
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-gradient-gold font-semibold text-primary transition-all hover:shadow-gold"
-              >
-                <FaWhatsapp className="w-5 h-5" /> Discuss Your Project
-              </motion.a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Preview */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-[#143621]">
         <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            title="What Our Clients Say"
-            subtitle="Hear from satisfied customers who trust Zohar Energy for their solar needs in Abuja."
-          />
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-4xl text-white font-semibold">
+              What Our Clients Say
+            </h2>
+            <p className="mt-4 font-sans text-sm text-white/70 max-w-2xl mx-auto">
+              Hear from satisfied customers who trust Zohar Energy for their solar needs in Abuja.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             {testimonials.slice(0, 3).map((t, i) => (
               <motion.div
@@ -366,21 +318,28 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card rounded-xl p-7 shadow-card"
+                className="relative bg-[#143621]/90 rounded-xl p-7 shadow-card overflow-hidden"
               >
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, si) => (
-                    <span key={si} className="text-solar-gold text-lg">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-5 italic">
-                  "{t.comment}"
-                </p>
-                <div>
-                  <p className="font-heading font-semibold text-sm">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.service}</p>
+                <Quote className="pointer-events-none absolute right-6 top-6 h-28 w-28 text-white/10" />
+                <div className="relative z-10">
+                  <div className="flex items-center gap-1 mb-4">
+                    {[...Array(5)].map((_, si) => (
+                      <span key={si} className="text-[#D4AF37] text-lg">
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                  <p className="font-serif italic text-white text-lg leading-relaxed mb-5">
+                    "{t.comment}"
+                  </p>
+                  <div>
+                    <p className="font-sans font-bold uppercase tracking-wider text-[#D4AF37] mb-1">
+                      {t.name}
+                    </p>
+                    <p className="font-sans text-sm text-white/70">
+                      {t.service}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -388,7 +347,7 @@ const Index = () => {
           <div className="text-center">
             <Link
               to="/testimonials"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:scale-105 transition-transform"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white text-white font-semibold text-sm hover:bg-white hover:text-[#143621] transition-all"
             >
               See All Testimonials <ArrowRight className="w-4 h-4" />
             </Link>
