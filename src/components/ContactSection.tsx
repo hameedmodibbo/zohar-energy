@@ -1,8 +1,20 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const ContactSection = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const whatsappMessage = `Hello Zohar Energy, my name is ${name}. ${message}`;
+    const whatsappUrl = `https://wa.me/2348134978154?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <section id="contact" className="py-24 bg-[#F5F2EB]">
       <div className="container mx-auto px-4 lg:px-8">
@@ -30,7 +42,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-sans text-sm text-gray-600">Phone</p>
-                  <a href="tel:+2348134978154" className="font-sans font-semibold text-[#143621] block">
+                  <a href="https://wa.me/2348134978154" target="_blank" rel="noopener noreferrer" className="font-sans font-semibold text-[#143621] block hover:text-[#D4AF37] transition-colors">
                     +234 813 4978 154
                   </a>
                 </div>
@@ -42,7 +54,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-sans text-sm text-gray-600">Email</p>
-                  <a href="mailto:info@zoharenergy.com" className="font-sans font-semibold text-[#143621] block">
+                  <a href="mailto:info@zoharenergy.com" className="font-sans font-semibold text-[#143621] block hover:text-[#D4AF37] transition-colors">
                     info@zoharenergy.com
                   </a>
                 </div>
@@ -69,7 +81,7 @@ const ContactSection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-white p-8 rounded-sm shadow-xl"
           >
-            <div className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="font-sans text-sm text-gray-600 block mb-2" htmlFor="name">
                   Full Name
@@ -78,7 +90,10 @@ const ContactSection = () => {
                   id="name"
                   type="text"
                   placeholder="Enter your name"
-                  className="w-full border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 outline-none transition-all focus:border-[#143621]"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 outline-none transition-all focus:border-[#143621] rounded-sm"
+                  required
                 />
               </div>
               <div>
@@ -89,7 +104,10 @@ const ContactSection = () => {
                   id="email"
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 outline-none transition-all focus:border-[#143621]"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 outline-none transition-all focus:border-[#143621] rounded-sm"
+                  required
                 />
               </div>
               <div>
@@ -100,13 +118,17 @@ const ContactSection = () => {
                   id="message"
                   rows={5}
                   placeholder="Tell us about your project"
-                  className="w-full border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 outline-none transition-all focus:border-[#143621] resize-none"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 outline-none transition-all focus:border-[#143621] resize-none rounded-sm"
+                  required
                 />
               </div>
-              <button className="w-full rounded-sm bg-[#D4AF37] px-6 py-4 text-base font-bold text-[#143621] transition-all duration-200 hover:bg-[#c39b2f]">
+              <button type="submit" className="w-full rounded-sm bg-[#D4AF37] px-6 py-4 text-base font-bold text-[#143621] transition-all duration-200 hover:bg-[#c39b2f] flex items-center justify-center gap-2">
+                <FaWhatsapp className="w-5 h-5" />
                 Request a Free Quote
               </button>
-            </div>
+            </form>
           </motion.div>
         </div>
       </div>
@@ -115,3 +137,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+

@@ -113,7 +113,9 @@ const Index = () => {
                 Explore Solutions
               </a>
               <a
-                href="#contact"
+                href="https://wa.me/2348134978154?text=Hello%20Zohar%20Energy%2C%20I%20would%20like%20to%20contact%20you."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-white text-white bg-transparent font-semibold text-base transition-all duration-200 hover:bg-white/10"
               >
                 Contact Us

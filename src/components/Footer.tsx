@@ -51,9 +51,12 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h3 className="font-sans text-base font-semibold mb-4 text-white">Contact</h3>
+            <a href="https://wa.me/2348134978154" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#D4AF37] font-semibold hover:text-white transition-colors mb-4">
+              <FaWhatsapp className="w-5 h-5" /> Chat on WhatsApp
+            </a>
             <div className="flex flex-col gap-3 text-sm text-white/70">
-              <a href="tel:+2348134978154" className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors">
-                <Phone className="w-4 h-4 text-[#D4AF37]" /> +234 813 4978 154
+              <a href="https://wa.me/2348134978154" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors">
+                <Phone className="w-4 h-4 text-[#D4AF37]" /> WhatsApp Support
               </a>
               <a href="mailto:info@zoharenergy.com" className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors">
                 <Mail className="w-4 h-4 text-[#D4AF37]" /> info@zoharenergy.com
