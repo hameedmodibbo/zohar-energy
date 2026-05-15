@@ -17,13 +17,13 @@ const Testimonials = () => {
       description="Read what clients in Abuja say about Zohar Energy's solar installation services. Discover why customers trust us for reliable, professional solar solutions."
     >
       {/* Hero */}
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-[#143621]">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-heading font-extrabold text-4xl lg:text-5xl text-primary-foreground mb-4"
+            className="font-serif font-extrabold text-4xl lg:text-5xl text-white mb-4"
           >
             What Our Clients Say About Zohar Energy
           </motion.h1>
@@ -31,7 +31,7 @@ const Testimonials = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-primary-foreground/70 max-w-xl mx-auto text-lg"
+            className="text-white/70 max-w-xl mx-auto text-lg"
           >
             Real stories from real customers who chose Zohar Energy for their solar needs in Abuja.
           </motion.p>
@@ -39,7 +39,7 @@ const Testimonials = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-[#143621]">
         <div className="container mx-auto px-4 lg:px-8">
           {/* Filter Buttons */}
           <div className="flex justify-center gap-3 mb-12">
@@ -47,10 +47,10 @@ const Testimonials = () => {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-5 py-2.5 rounded-sm text-sm font-semibold transition-all ${
                   activeFilter === filter
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-foreground hover:bg-accent/20"
+                    ? "bg-[#D4AF37] text-[#143621]"
+                    : "bg-white text-gray-700 hover:bg-gray-100"
                 }`}
               >
                 {filter}
@@ -66,18 +66,18 @@ const Testimonials = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="bg-card rounded-xl p-7 shadow-card hover:shadow-card-hover transition-all duration-300"
+                className="bg-white rounded-sm p-8 shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, si) => (
-                    <span key={si} className="text-solar-gold text-lg">★</span>
+                    <span key={si} className="text-[#D4AF37] text-lg">★</span>
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-5 italic">"{t.comment}"</p>
-                <div className="border-t border-border pt-4">
-                  <p className="font-heading font-semibold text-sm">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.service}</p>
-                  <span className="inline-block mt-2 text-xs font-medium text-solar-gold bg-accent/15 px-2 py-0.5 rounded">{t.category}</span>
+                <p className="font-sans text-gray-600 text-sm leading-relaxed mb-5 italic">"{t.comment}"</p>
+                <div className="border-t border-gray-200 pt-4">
+                  <p className="font-serif font-semibold text-sm text-[#143621]">{t.name}</p>
+                  <p className="text-xs text-gray-500">{t.service}</p>
+                  <span className="inline-block mt-2 text-xs font-medium text-[#D4AF37] bg-[#D4AF37]/15 px-2 py-0.5 rounded-sm">{t.category}</span>
                 </div>
               </motion.div>
             ))}
@@ -86,17 +86,17 @@ const Testimonials = () => {
       </section>
 
       {/* Share Experience */}
-      <section className="py-16 bg-secondary">
+      <section className="py-16 bg-[#F5F2EB]">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <SectionHeading
             title="Share Your Experience"
             subtitle="Had a great experience with Zohar Energy? We'd love to hear from you!"
           />
           <a
-            href="https://wa.me/2348000000000?text=Hello%20Zohar%20Energy%2C%20I%20would%20like%20to%20share%20my%20experience."
+            href="https://wa.me/2348134978154?text=Hello%20Zohar%20Energy%2C%20I%20would%20like%20to%20share%20my%20experience."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-gradient-gold text-primary font-semibold hover:shadow-gold hover:scale-105 transition-all"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-sm bg-[#D4AF37] text-[#143621] font-semibold hover:bg-[#c39b2f] transition-all"
           >
             Share Your Story
           </a>

@@ -52,10 +52,10 @@ const Gallery = ({ items, filters }: GalleryProps) => {
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${
+            className={`px-5 py-2.5 rounded-sm text-sm font-semibold transition-all ${
               activeFilter === filter
-                ? "bg-primary text-primary-foreground"
-                : "bg-secondary text-foreground hover:bg-accent/20"
+                ? "bg-[#D4AF37] text-[#143621]"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
           >
             {filter}
@@ -73,7 +73,7 @@ const Gallery = ({ items, filters }: GalleryProps) => {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.06 }}
             onClick={() => openImage(item, index)}
-            className="group cursor-pointer rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+            className="group cursor-pointer rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
           >
             <div className="relative h-64 overflow-hidden bg-gray-200">
               <motion.img
@@ -91,14 +91,14 @@ const Gallery = ({ items, filters }: GalleryProps) => {
                 </div>
               </div>
             </div>
-            <div className="p-4 bg-card">
-              <span className="text-xs font-semibold text-solar-gold uppercase tracking-wider">
+            <div className="p-4 bg-white">
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-wider">
                 {item.category}
               </span>
-              <h3 className="font-heading font-semibold text-base mt-2 mb-2">
+              <h3 className="font-serif font-semibold text-base mt-2 mb-2 text-[#143621]">
                 {item.title}
               </h3>
-              <p className="text-muted-foreground text-sm">{item.description}</p>
+              <p className="font-sans text-gray-600 text-sm">{item.description}</p>
             </div>
           </motion.div>
         ))}
@@ -126,7 +126,7 @@ const Gallery = ({ items, filters }: GalleryProps) => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 text-white hover:text-primary transition-colors"
+                className="absolute -top-12 right-0 text-white hover:text-[#D4AF37] transition-colors"
               >
                 <X size={32} />
               </motion.button>
@@ -146,10 +146,10 @@ const Gallery = ({ items, filters }: GalleryProps) => {
 
               {/* Info */}
               <div className="mt-6 text-white">
-                <span className="text-xs font-semibold text-solar-gold uppercase tracking-wider">
+                <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-wider">
                   {selectedImage.category}
                 </span>
-                <h2 className="font-heading font-bold text-2xl mt-2 mb-2">
+                <h2 className="font-serif font-bold text-2xl mt-2 mb-2">
                   {selectedImage.title}
                 </h2>
                 <p className="text-gray-300 mb-4">{selectedImage.description}</p>
